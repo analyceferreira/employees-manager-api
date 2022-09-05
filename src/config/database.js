@@ -1,9 +1,19 @@
+const Sequelize = require('sequelize')
+require('dotenv').config()
+
+console.log(process.env.DB_USERNAME)
+console.log(process.env.DB_PASSWORD)
+console.log(process.env.DB_DATABASE)
+console.log(process.env.DB_HOST)
+console.log(process.env.NODE_ENV)
+
 module.exports = {
-  username: "postgres",
-  password: 'supersenha',
-  database: 'employees_manager',
-  host: "127.0.0.1",
-  dialect: "postgres",
+  username: process.env.DB_USERNAME,
+  password: process.env.DB_PASSWORD,
+  database: process.env.DB_DATABASE,
+  host: process.env.DB_HOST,
+  dialect: process.env.DB_DIALECT || "postgres",
+  storage: './__tests__/database.sqlite',
   logging: false,
   define: {
     timestamps: true,
