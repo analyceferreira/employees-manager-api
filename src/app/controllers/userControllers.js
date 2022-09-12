@@ -139,7 +139,7 @@ const UserController = {
         res.status(200).json({
             success: true,
             message: 'Users found successful',
-            user: isUsersFound
+            users: isUsersFound
         })
     },
 }

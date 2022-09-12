@@ -130,7 +130,7 @@ const CompanyController = {
         res.status(200).json({
             success: true,
             message: 'Companies found successful',
-            company: isCompaniesFound
+            companies: isCompaniesFound
         })
     },
 }
