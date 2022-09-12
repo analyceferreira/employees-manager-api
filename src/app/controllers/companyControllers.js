@@ -22,8 +22,6 @@ const CompanyController = {
             phone,
             address
         }
-
-        console.log(company)
     
         const isCreated = await CompanyService.create(company)
 

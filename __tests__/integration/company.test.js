@@ -10,7 +10,6 @@ describe('Company integrations', () => {
     it('Should return status 200 and company object on CREATE a company on database', async () => {
         const companyData = await CompanyFactory.generate()
 
-        console.log(companyData)
         const response = await req(app)
             .post("/company/create")
             .send(companyData);

@@ -49,7 +49,6 @@ const UserService = {
     },
 
     delete: async (id) => {
-        console.log(id)
         return UserRepository.destroy({where: {id: id}})
     }
 }

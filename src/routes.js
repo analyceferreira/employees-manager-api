@@ -24,9 +24,6 @@ router.post('/user/create', async (req, res) => {
         admin_user
     })
 
-
-    console.log(JSON.stringify(user))
-
     res.status(200).json(JSON.stringify(user))
 })
 

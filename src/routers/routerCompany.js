@@ -11,6 +11,5 @@ router.delete('/delete/:id', CompanyController.delete)
 router.get('/:id', CompanyController.show)
 router.get('/', CompanyController.showAll)
 
-//***********************company**************************** */
 
 module.exports = router
