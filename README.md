@@ -326,6 +326,10 @@ Return:
 - Rename .env.exemple file to .env and insert your production database informations
 - Rename .env.test.exemple file to .env.test and insert your test database informations
 
+[Clicking here](https://lucid.app/lucidchart/e8d1aeae-0514-45c4-9865-dd60e40be463/edit?page=0_0#
+) for to see database schema .
+
+
 
  
 
