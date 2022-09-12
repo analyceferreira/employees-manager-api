@@ -1,25 +1,27 @@
-
 require('dotenv').config({
     path: process.env.NODE_ENV == 'test' ? '.env.test' : '.env'
 })
 
-const  express = require('express')
+const express = require('express')
+const path = require('path')
+const methodOverride = require('method-override')
+const bodyParser = require('body-parser');
+const userRouter = require(path.join(__dirname,'/routers/routerUser.js'))
+const companyRouter = require(path.join(__dirname,'/routers/routerCompany.js'))
 
-class AppController {
-    constructor() {
-        this.express = express();
 
-        this.middlewares();
-        this.routes();
-    }
 
-    middlewares() {
-        this.express.use(express.json)
-    }
+const app = express()
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 
-    routes() {
-        this.express.use(require('./routes'))
-    }
-}
+app.use(express.json())
+app.use(methodOverride('_method'))
 
-module.exports = new AppController().express
+
+app.use('/user', userRouter)
+app.use('/company', companyRouter)
+
+
+
+module.exports = app

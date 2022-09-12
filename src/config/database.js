@@ -1,11 +1,14 @@
 const Sequelize = require('sequelize')
-require('dotenv').config()
+require("dotenv").config({
+  path: process.env.NODE_ENV == "test" ? ".env.test" : ".env"
+});
 
-console.log(process.env.DB_USERNAME)
-console.log(process.env.DB_PASSWORD)
-console.log(process.env.DB_DATABASE)
-console.log(process.env.DB_HOST)
-console.log(process.env.NODE_ENV)
+// console.log(process.env.NODE_ENV)
+// console.log(process.env.DB_USERNAME)
+// console.log(process.env.DB_PASSWORD)
+// console.log(process.env.DB_DATABASE)
+// console.log(process.env.DB_HOST)
+// console.log(process.env.DB_DIALECT)
 
 module.exports = {
   username: process.env.DB_USERNAME,
